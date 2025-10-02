@@ -1,20 +1,5 @@
-// Mobile Navigation Toggle
+// Smooth scrolling for anchor links (Funciona con Bootstrap Navbar)
 document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-
-    hamburger.addEventListener('click', function () {
-        navMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        });
-    });
-
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -24,8 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
+                // Compensar la altura de la navbar fija
+                const offsetTop = targetElement.offsetTop - document.querySelector('.navbar').offsetHeight;
                 window.scrollTo({
-                    top: targetElement.offsetTop - 70, // Account for fixed header
+                    top: offsetTop,
                     behavior: 'smooth'
                 });
             }

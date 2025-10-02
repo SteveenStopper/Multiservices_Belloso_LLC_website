@@ -1,42 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiservices Belloso LLC - Building Trust, Transforming Spaces</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="img/logo-t.ico" type="image/x-icon">
 </head>
+
 <body>
     <!-- Header -->
     <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="logo">
-                    <h2>Multiservices Belloso LLC</h2>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="img/logo-t.png" alt="Multiservices Belloso LLC Logo" class="logo-img">
+                </a>
+
+                <!-- Botón de colapso para móvil -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Opciones del menú a la derecha -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Building Trust, Transforming Spaces</h1>
-            <p>Your trusted partner for residential and commercial remodeling, painting, and repairs in Bradenton, FL.</p>
-            <a href="#contact" class="cta-button">Get a Free Quote</a>
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="home-overlay"></div>
+        <div class="container text-center home-content">
+            <div class="home-text-wrapper">
+                <h1 class="home-title">Building Trust, Transforming Spaces</h1>
+                <p class="home-subtitle">Your trusted partner for residential and commercial remodeling, painting, and
+                    repairs in Bradenton, FL.</p>
+                <div class="home-buttons">
+                    <a href="#contact" class="cta-button cta-primary">Get a Free Quote</a>
+                    <a href="#services" class="cta-button cta-secondary">Our Services</a>
+                </div>
+                <div class="home-features">
+                    <div class="feature-item">
+                        <i class="fas fa-award"></i>
+                        <span>5+ Years Experience</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-users"></i>
+                        <span>Professional Team</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Licensed & Insured</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -46,8 +86,13 @@
             <h2>Who We Are</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>At Multiservices Belloso LLC, we are more than just a construction company — we are your trusted partner in transforming and maintaining spaces with creativity and precision. Based in Bradenton, Florida, our team provides a wide range of services, from remodeling and painting to pool repairs, drywall finishing, and framing in both wood and metal.</p>
-                    <p>Our strength lies in our attention to detail, reliability, and personalized service, ensuring that every project, whether residential or commercial, exceeds expectations. We approach each task with innovation and efficiency, adapting to the unique needs of every client.</p>
+                    <p>At Multiservices Belloso LLC, we are more than just a construction company — we are your trusted
+                        partner in transforming and maintaining spaces with creativity and precision. Based in
+                        Bradenton, Florida, our team provides a wide range of services, from remodeling and painting to
+                        pool repairs, drywall finishing, and framing in both wood and metal.</p>
+                    <p>Our strength lies in our attention to detail, reliability, and personalized service, ensuring
+                        that every project, whether residential or commercial, exceeds expectations. We approach each
+                        task with innovation and efficiency, adapting to the unique needs of every client.</p>
                     <div class="values">
                         <div class="value-box">
                             <i class="fas fa-trophy"></i>
@@ -67,7 +112,8 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://via.placeholder.com/500x400/0a2e5c/ffffff?text=Our+Team+at+Work" alt="Our Team at Work">
+                    <img src="img/about_01.png"
+                        alt="Our Team at Work">
                 </div>
             </div>
         </div>
@@ -80,11 +126,14 @@
             <div class="mission-vision-content">
                 <div class="mission">
                     <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
-                    <p>To provide comprehensive remodeling, painting, and repair solutions with a focus on quality, responsibility, and efficiency, ensuring each project reflects our clients’ vision and lifestyle.</p>
+                    <p>To provide comprehensive remodeling, painting, and repair solutions with a focus on quality,
+                        responsibility, and efficiency, ensuring each project reflects our clients’ vision and
+                        lifestyle.</p>
                 </div>
                 <div class="vision">
                     <h3><i class="fas fa-eye"></i> Our Vision</h3>
-                    <p>To become a leading company in Florida’s remodeling and construction industry, recognized for our innovation, craftsmanship, and dedication to customer satisfaction.</p>
+                    <p>To become a leading company in Florida’s remodeling and construction industry, recognized for our
+                        innovation, craftsmanship, and dedication to customer satisfaction.</p>
                 </div>
             </div>
         </div>
@@ -95,7 +144,10 @@
         <div class="container">
             <h2>Our Commitment to Safety</h2>
             <div class="safety-content">
-                <p>At Multiservices Belloso LLC, safety is at the core of everything we do. We prioritize the well-being of our clients, their properties, and our team by implementing safe and organized work practices at every stage. From preparation to project completion, we ensure clean, hazard-free environments, delivering not only quality results but also peace of mind.</p>
+                <p>At Multiservices Belloso LLC, safety is at the core of everything we do. We prioritize the well-being
+                    of our clients, their properties, and our team by implementing safe and organized work practices at
+                    every stage. From preparation to project completion, we ensure clean, hazard-free environments,
+                    delivering not only quality results but also peace of mind.</p>
             </div>
         </div>
     </section>
@@ -108,12 +160,14 @@
                 <div class="service-card">
                     <i class="fas fa-tools"></i>
                     <h3>Remodeling & Renovations</h3>
-                    <p>Complete kitchen and bathroom remodeling, interior and exterior renovations, basement finishing, and custom upgrades.</p>
+                    <p>Complete kitchen and bathroom remodeling, interior and exterior renovations, basement finishing,
+                        and custom upgrades.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-paint-roller"></i>
                     <h3>Painting & Drywall</h3>
-                    <p>Professional interior and exterior painting, drywall installation, repair, finishing, and decorative details.</p>
+                    <p>Professional interior and exterior painting, drywall installation, repair, finishing, and
+                        decorative details.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-swimming-pool"></i>
@@ -125,6 +179,38 @@
                     <h3>Framing & General Services</h3>
                     <p>Wood and metal framing, custom carpentry, stucco repair, power washing, and junk removal.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Before & After</h2>
+
+            <!-- Images Carousel -->
+            <div id="carouselExampleInterval" class="carousel slide fixed-carousel" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="img/picture_01.png" class="d-block w-100 carousel-image" alt="Before and After 1">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="img/picture_01.png" class="d-block w-100 carousel-image" alt="Before and After 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/picture_01.png" class="d-block w-100 carousel-image" alt="Before and After 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </section>
@@ -157,7 +243,10 @@
                     </div>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.760609154494!2d-82.58343492468504!3d27.49273407654498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c3043458679d7b%3A0x535913558238811a!2s711%2027th%20Ave%20W%2C%20Bradenton%2C%20FL%2034205%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sus!4v1703123456789!5m2!1ses-419!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.760609154494!2d-82.58343492468504!3d27.49273407654498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c3043458679d7b%3A0x535913558238811a!2s711%2027th%20Ave%20W%2C%20Bradenton%2C%20FL%2034205%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sus!4v1703123456789!5m2!1ses-419!2sus"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -171,6 +260,11 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

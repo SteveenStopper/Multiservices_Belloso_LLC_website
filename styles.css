@@ -24,7 +24,7 @@ section {
 
 h1, h2, h3 {
     margin-bottom: 20px;
-    color: #0a2e5c; /* Primary Blue */
+    color: #0a2e5c;
     font-weight: 700;
 }
 
@@ -43,56 +43,29 @@ img {
     height: auto;
 }
 
-/* Header & Navigation */
-header {
-    background-color: #0a2e5c; /* Primary Blue */
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+/* Custom Navbar */
+.custom-navbar {
+    background-color: #0a2e5c;
     box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
-.navbar {
-    padding: 1rem 0;
+.logo-img {
+    height: 65px;
+    width: auto;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo h2 {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-}
-
-.nav-menu li {
-    margin-left: 1.5rem;
-}
-
-.nav-menu a {
-    color: white;
-    font-weight: 500;
-    transition: color 0.3s ease;
+.navbar-nav .nav-link {
     position: relative;
+    transition: color 0.3s ease;
 }
 
-.nav-menu a:hover {
-    color: #f39c12; /* Accent Orange */
-}
-
-.nav-menu a::after {
+.navbar-nav .nav-link::after {
     content: '';
     position: absolute;
     width: 0;
@@ -103,74 +76,176 @@ header {
     transition: width 0.3s ease;
 }
 
-.nav-menu a:hover::after {
+.navbar-nav .nav-link:hover::after {
     width: 100%;
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+.navbar-nav .nav-link:hover {
+    color: #f39c12 !important;
 }
 
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
-    transition: 0.3s;
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(10, 46, 92, 0.85), rgba(10, 46, 92, 0.85)), url('https://via.placeholder.com/1920x1080/0a2e5c/ffffff?text=Hero+Background') no-repeat center center/cover;
-    height: 100vh;
+/* Home Section */
+.home {
+    background: linear-gradient(135deg, #0a2e5c 0%, #1a4d8f 100%);
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: white;
+    position: relative;
+    padding: 120px 20px 80px;
+    overflow: hidden;
 }
 
-.hero-content h1 {
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    opacity: 0.5;
+}
+
+.home-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(243, 156, 18, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(243, 156, 18, 0.08) 0%, transparent 50%);
+}
+
+.home-content {
+    position: relative;
+    z-index: 1;
+}
+
+.home-text-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-title {
     font-size: 3.5rem;
-    margin-bottom: 1rem;
+    font-weight: 700;
     color: white;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 25px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+    animation: fadeInUp 1s ease-out 0.2s both;
 }
 
-.hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    max-width: 800px;
+.home-subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    color: #f8f8f8;
+    animation: fadeInUp 1s ease-out 0.4s both;
 }
 
-.cta-button {
-    display: inline-block;
-    background-color: #f39c12; /* Accent Orange */
+.home-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.cta-primary {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
     color: white;
-    padding: 15px 30px;
-    border-radius: 5px;
+    padding: 15px 35px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+    border: none;
+    display: inline-block;
 }
 
-.cta-button:hover {
-    background-color: #e67e22; /* Darker Orange */
+.cta-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 35px rgba(243, 156, 18, 0.5);
+    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+}
+
+.cta-secondary {
+    background: transparent;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid white;
+    display: inline-block;
+}
+
+.cta-secondary:hover {
+    background: white;
+    color: #0a2e5c;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.home-features {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.feature-item i {
+    font-size: 1.3rem;
+    color: #f39c12;
 }
 
 /* About Section */
 .about {
-    background-color: #ffffff; 
-    padding: 80px 0; 
+    background-color: #ffffff;
+    padding: 80px 0;
 }
 
 .about h2 {
@@ -191,7 +266,7 @@ header {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background-color: #f39c12; /* Accent Orange */
+    background-color: #f39c12;
 }
 
 .about-content {
@@ -248,8 +323,8 @@ header {
 }
 
 .value-box i {
-    font-size: 2.5rem; 
-    color: #f39c12; /* Accent Orange */
+    font-size: 2.5rem;
+    color: #f39c12;
     margin-bottom: 15px;
     background: linear-gradient(45deg, #0a2e5c, #f39c12);
     -webkit-background-clip: text;
@@ -259,7 +334,7 @@ header {
 
 .value-box h3 {
     color: #0a2e5c;
-    font-size: 1.3rem; /* Reducido tamaño */
+    font-size: 1.3rem;
     margin-bottom: 10px;
 }
 
@@ -297,7 +372,7 @@ header {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background-color: #f39c12; /* Accent Orange */
+    background-color: #f39c12;
 }
 
 .mission-vision-content {
@@ -331,7 +406,7 @@ header {
 }
 
 .mission h3 i, .vision h3 i {
-    color: #f39c12; /* Accent Orange */
+    color: #f39c12;
 }
 
 .mission p, .vision p {
@@ -342,7 +417,7 @@ header {
 
 /* Safety Section */
 .safety {
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff;
 }
 
 .safety.reduced-padding {
@@ -369,7 +444,7 @@ header {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background-color: #f39c12; /* Accent Orange */
+    background-color: #f39c12;
 }
 
 .safety-content {
@@ -387,7 +462,7 @@ header {
 
 /* Services Section */
 .services {
-    background-color: #0a2e5c; /* Primary Blue */
+    background-color: #0a2e5c;
     color: white;
     padding: 80px 0;
 }
@@ -411,7 +486,7 @@ header {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background-color: #f39c12; /* Accent Orange */
+    background-color: #f39c12;
 }
 
 .services-grid {
@@ -439,7 +514,7 @@ header {
 
 .service-card i {
     font-size: 2.8rem;
-    color: #f39c12; /* Accent Orange */
+    color: #f39c12;
     margin-bottom: 15px;
     transition: transform 0.3s ease;
 }
@@ -457,6 +532,59 @@ header {
 .service-card p {
     color: #e0e0e0;
     font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Gallery Section */
+.gallery {
+    background-color: #f0f4f8;
+    padding: 60px 0 80px 0;
+}
+
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #0a2e5c;
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #f39c12;
+}
+
+/* Carousel */
+.fixed-carousel {
+    margin-top: 0;
+    margin-bottom: 0;
+    max-height: 400px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.fixed-carousel .carousel-inner,
+.fixed-carousel .carousel-item {
+    height: 400px;
+}
+
+.carousel-image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 /* Contact Section */
@@ -483,7 +611,7 @@ header {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background-color: #f39c12; /* Accent Orange */
+    background-color: #f39c12;
 }
 
 .contact-content {
@@ -518,7 +646,7 @@ header {
 
 .contact-details i {
     font-size: 1.5rem;
-    color: #f39c12; /* Accent Orange */
+    color: #f39c12;
     margin-right: 15px;
     min-width: 24px;
     margin-top: 3px;
@@ -540,7 +668,7 @@ header {
 
 /* Footer */
 .footer {
-    background-color: #0a2e5c; /* Primary Blue */
+    background-color: #0a2e5c;
     color: white;
     text-align: center;
     padding: 30px 0 20px;
@@ -554,41 +682,59 @@ header {
 .footer p:last-child {
     margin-top: 10px;
     font-style: italic;
-    color: #f39c12; /* Accent Orange */
+    color: #f39c12;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
+    /* Ajuste del home en móviles */
+    .home {
+        padding: 100px 20px 60px;
+        min-height: 90vh;
     }
 
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
+    .home-title {
+        font-size: 2.2rem;
+    }
+
+    .home-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .home-buttons {
         flex-direction: column;
-        background-color: #0a2e5c;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+        padding: 12px 30px;
+        font-size: 1rem;
         width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        max-width: 280px;
     }
 
-    .nav-menu.active {
-        left: 0;
+    .home-features {
+        gap: 15px;
     }
 
-    .nav-menu li {
-        margin: 1rem 0;
+    .feature-item {
+        font-size: 0.9rem;
+        padding: 10px 20px;
     }
 
-    .hero-content h1 {
-        font-size: 2.5rem;
+    .feature-item i {
+        font-size: 1.1rem;
     }
 
-    .hero-content p {
-        font-size: 1.2rem;
+    /* Ajuste del carousel en móviles */
+    .fixed-carousel,
+    .fixed-carousel .carousel-inner,
+    .fixed-carousel .carousel-item {
+        height: 300px;
+        max-height: 300px;
+        margin-top: 0;
     }
 
     .about-content,
@@ -608,5 +754,9 @@ header {
 
     .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .logo-img {
+        height: 55px;
     }
 }
